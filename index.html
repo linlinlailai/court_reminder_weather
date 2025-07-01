@@ -55,7 +55,22 @@
 
   <div id="weather">
   <h3>🌤 今日竹北市天氣預報</h3>
-  <p id="weatherInfo">載入中…</p>
+  <!-- 竹北市天氣預報 -->
+<div style="width: 100%; max-width: 400px; margin-bottom: 10px;">
+  <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/24d84n121d01/zhubei/" data-label_1="竹北市天氣" data-label_2="今日預報" data-theme="pure">竹北市天氣</a>
+</div>
+<script>
+!function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0];
+  if(!d.getElementById(id)){
+    js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+    fjs.parentNode.insertBefore(js,fjs);
+  }
+}(document,'script','weatherwidget-io-js');
+</script>
+
+    
+  
   <button onclick="setRain(true)">☔ 下雨</button>
   <button onclick="setRain(false)">☀ 不下雨</button>
 </div>
@@ -79,24 +94,7 @@
 <textarea id="output" placeholder="這裡會即時顯示通知內容..."></textarea>
 
 <script>
-  let isRain = false;
 
-// 這段你每天可以手動改
-window.weatherData = "午後多雲，降雨機率 10%";
-
-function fetchWeather() {
-  document.getElementById("weatherInfo").textContent = `今天預報為：${window.weatherData}`;
-}
-
-function setRain(v) {
-  isRain = v;
-  updateOutput(); // 更新產生文字
-}
-
- fetchWeather();
-
-
-  
 
   
   const times = ["18:00", "18:30", "19:00", "19:30", "20:00"];
